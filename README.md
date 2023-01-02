@@ -124,11 +124,11 @@
 
 - ~ (tilde) : This symbol is used to specify a version range that is compatible with the latest patch version. For example, if the latest version of a package is 1.2.3, specifying a version range of ~1.2.3 will allow you to install any version of the package that starts with 1.2.3, such as 1.2.3, 1.2.4, etc.
 
-- > (greater than) : This symbol is used to specify a version range that is greater than a certain version. For example, specifying a version range of >1.2.3 will allow you to install any version of the package that is greater than 1.2.3, such as 1.2.4, 1.3.0, etc.
+- /> (greater than) : This symbol is used to specify a version range that is greater than a certain version. For example, specifying a version range of >1.2.3 will allow you to install any version of the package that is greater than 1.2.3, such as 1.2.4, 1.3.0, etc.
 
 - < (less than) : This symbol is used to specify a version range that is less than a certain version. For example, specifying a version range of <1.2.3 will allow you to install any version of the package that is less than 1.2.3, such as 1.1.0, 1.0.0, etc.
 
-- * (asterisk) : This symbol is used to specify that any version of the package is allowed.
+- /* (asterisk) : This symbol is used to specify that any version of the package is allowed.
 
 ### What are the various script types?
 
