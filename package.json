@@ -1,0 +1,12 @@
+{
+  "name": "namaste-react-02",
+  "version": "1.0.0",
+  "description": "### What is `npm`?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
