@@ -63,4 +63,81 @@
 
 - This is different from Live Server or Watch Mode because HMR updates part of code, while live server gives us a server which we can use to run our app and Watch Mode gives us automatic build on saving.
 
+### List down your favourite 5 superpowers of Parcel and describe any 3 of them.
 
+- Zero Configuration: The most important superpower of Parcel is that it does all the heavy lifting for us and we have to spend zero time configuring it.
+
+- Out of the box support for common module bundling features: We get HMR, Caching, Development Server, Output Management etc, Minification etc already out of the box.
+
+- Rest features are common for other module bundlers too but here's description of some of them:
+	- HMR: This allows us to only build the code we have changed.
+	- Cache: This allows us to lessen the build time by caching after first build.
+	- Tree Shaking: This gets rid of unused code from our app.
+	- Code Splitting: This allows us to split our modules such that we only build the required stuff. For example, we can seperate all out dependencies and our custom code so that we don't have to always build the dependencies.
+
+### What is `.gitignore` ? What should we add and not add into it?
+
+- `.gitignore` is a file used to tell git which files or folders we don't wan't to be tracked by git.
+
+- A rule of thumb is to only add those files/folders which can be automatically installed/built by the server. Example: `node_modules`, `.parcel-cache`.
+
+### What is the difference between `package.json` and `package.lock.json`?
+
+- `package.json`: 
+	-  contains information about our npm package. It contains all our dependencies and dev dependencies and also things like name of the package, author, description etc.
+
+	- `name` and `version` are required fields in `package.json`.
+
+	- automaticaly added when initializing npm.
+- `package.lock.json`: 
+	- is used to track the exact version of the dependencies which are installed currently in the server. 
+
+	-  contains the dependency tree/graph which is helpful to reproduce the exact project as built by the developer.
+
+	- automatically added when installing any dependency.
+
+### Why should i not modify `package.lock.json` ?
+
+- Modifying `package.lock.json` or any other code which is there for helping the package is not a good idea. This may cause the package to break or even the entire app.
+
+### What is `node_modules` ? Is it a good idea to push it to git?
+
+- It contains all out external packages, both dev and normal dependencies.
+
+- It is not a good idea to track it with git because it can get huge and also, anyone can install the `node_modules` folder by running npm install. To share an npm package, we just need the `package.json` and `package.lock.json`.
+
+### What is `dist` folder? 
+
+- Whatever output the module bundler gives, is stored in the dist folder by default.
+
+### What is `browserlists`?
+
+- It is a package which helps us to make out code backwards compatible with older browsers.
+
+### Read about ^ and ~ in dependencies naming conventions.
+
+- These are conventions used to specifiy which updates we would like to be automatically downloaded.
+
+- These are almost similar to the convention used in bash/zsh to access file names.
+
+- ^ (caret) : This symbol is used to specify a version range that is compatible with the latest minor version. For example, if the latest version of a package is 1.2.3, specifying a version range of ^1.2.3 will allow you to install any version of the package that starts with 1.2, such as 1.2.4, 1.2.5, etc.
+
+- ~ (tilde) : This symbol is used to specify a version range that is compatible with the latest patch version. For example, if the latest version of a package is 1.2.3, specifying a version range of ~1.2.3 will allow you to install any version of the package that starts with 1.2.3, such as 1.2.3, 1.2.4, etc.
+
+- > (greater than) : This symbol is used to specify a version range that is greater than a certain version. For example, specifying a version range of >1.2.3 will allow you to install any version of the package that is greater than 1.2.3, such as 1.2.4, 1.3.0, etc.
+
+- < (less than) : This symbol is used to specify a version range that is less than a certain version. For example, specifying a version range of <1.2.3 will allow you to install any version of the package that is less than 1.2.3, such as 1.1.0, 1.0.0, etc.
+
+- * (asterisk) : This symbol is used to specify that any version of the package is allowed.
+
+### What are the various script types?
+
+- Empty string, not specified : This means "classic script".
+
+- `module` : They represent javascript modules. The `charset` and `defer` attribute have no effect on these.
+
+- `importmap` : This represent that the body of script element is an import map. This is a JSON object that developers use to control how the browsers resolves module specifiers when importing JavaScript modules.
+
+- Any other value : Treated as a data block. For this, a valid MIME type should be used that is not a javascript MIME type. In this case, all other attributes will be ignored including the `src` attribute.
+
+- MIME Type : It stands for Multipurpose Internet Mail Extension. This is a way for identifying files on the internet. It contains of two parts: "type" and "subtype". Examples of type are text, image, audio etc and subtype are plain for text, jpeg for image, mpeg for audio. etc.
